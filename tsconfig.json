@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "jsx": "react-jsx",
+        "strict": true,
+        "baseUrl": "src",
+        "paths": {
+            "*": [
+                "types/*"
+            ]
+        },
+        "types": [
+            "node",
+            "react",
+            "react-dom",
+            "react-leaflet"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "*.d.ts"
+, "types"    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

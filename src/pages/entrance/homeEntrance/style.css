@@ -1,0 +1,21 @@
+.sectionContainer {
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que a seção ocupe pelo menos a altura total da viewport */
+}
+
+/* Estiliza o contêiner do formulário de login com fundo branco, sombra e bordas arredondadas */
+.Box {
+  width: 100%;
+    max-width: 800px; /* Limita a largura para melhor legibilidade em telas maiores */
+    display: flex;
+    flex-direction: column; /* Empilha os filhos verticalmente */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff; /* Fundo branco para a área do formulário */
+    border-radius: 10px; /* Cantos arredondados sutis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+}

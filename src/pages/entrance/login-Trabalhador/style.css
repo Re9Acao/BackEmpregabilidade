@@ -1,0 +1,210 @@
+/* Centraliza o conteúdo da seção principal com padding */
+.sectionContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Garante que a seção ocupe pelo menos a altura total da viewport */
+}
+
+/* Estiliza o contêiner do formulário de login com fundo branco, sombra e bordas arredondadas */
+.Box {
+  width: 100%;
+  max-width: 800px;
+  /* Limita a largura para melhor legibilidade em telas maiores */
+  display: flex;
+  flex-direction: column;
+  /* Empilha os filhos verticalmente */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 60px;
+  background-color: #fff;
+  /* Fundo branco para a área do formulário */
+  border-radius: 10px;
+  /* Cantos arredondados sutis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra suave para profundidade */
+}
+
+/* Centraliza o título do formulário */
+.titleContainer {
+  text-align: center;
+}
+
+/* Estiliza o título principal do formulário */
+.titleContainer h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Configura o contêiner do formulário para organizar os campos em coluna */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Organiza os campos de input em coluna com espaçamento */
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estiliza cada campo de input com seu rótulo */
+.input-Form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Estiliza os rótulos dos campos de input */
+.input-Form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Define a aparência dos campos de input */
+.input-Form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+/* Adiciona destaque ao campo de input quando focado */
+.input-Form input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Configura o contêiner do campo de senha com ícone de visibilidade */
+.BoxSenha {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Garante que o input de senha ocupe toda a largura, com espaço para o ícone */
+.BoxSenha input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+/* Posiciona o ícone de alternância de visibilidade da senha */
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+}
+
+/* Altera a cor do ícone ao passar o mouse */
+.password-toggle:hover {
+  color: #007bff;
+}
+
+/* Centraliza o botão de envio do formulário */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Estiliza o botão de envio do formulário */
+.submit {
+  padding: 12px 50px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* Escurece o botão ao passar o mouse */
+.submit:hover {
+  background-color: #0056b3;
+}
+
+/* Desativa o botão quando está carregando */
+.submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Adiciona uma linha horizontal para separar seções */
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.BoxLoginButton {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Centraliza o texto do contêiner de login/cadastro */
+.loginContainer {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Estiliza o link de cadastro */
+.loginContainer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Adiciona sublinhado ao link ao passar o mouse */
+.loginContainer a:hover {
+  text-decoration: underline;
+}
+
+/* Ajustes para telas menores (responsividade) */
+@media (max-width: 400px) {
+
+  /* Reduz o padding do contêiner do formulário em telas menores */
+  .Box {
+    padding: 20px;
+  }
+
+  /* Reduz o tamanho do título em telas menores */
+  .titleContainer h1 {
+    font-size: 24px;
+  }
+
+  /* Reduz o tamanho e o padding do botão de envio */
+  .submit {
+    font-size: 14px;
+    padding: 15px 20px;
+  }
+
+  /* Faz os inputs ocuparem 90% da largura do contêiner e os centraliza */
+  .input-Form input,
+  .BoxSenha input {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .BoxLoginButton {
+    width: 90%;
+  }
+}

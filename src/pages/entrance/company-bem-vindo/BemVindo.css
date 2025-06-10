@@ -1,0 +1,51 @@
+.Box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Box p {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.nome {
+    font-weight: bold;
+}
+
+.BoxAtividades {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.editar,
+.criarVagas {
+    width: 230px;
+    height: 60px;
+    margin: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6e6e6;
+    color: black;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adicionando a transição */
+}
+
+.editar:hover,
+.criarVagas:hover {
+    background-color: #ec6c03;
+    color: #fff;
+}
+
+.icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}

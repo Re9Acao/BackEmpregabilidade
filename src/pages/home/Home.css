@@ -1,0 +1,662 @@
+/* Variáveis CSS para personalizar cores de texto por seção */
+:root {
+  --section1-text-h2-color: #ffffff;
+  --section1-text-p-color: #e2e8f0;
+  --section2-text-h2-color: #1e3a8a;
+  --section2-text-p-color: #e2e8f0;
+  --section3-text-h2-color: #1e3a8a;
+  --section3-text-p-color: #475569;
+  --section4-text-h2-color: #ffffff;
+  --section4-text-p-color: #e2e8f0;
+  --section5-text-h2-color: #1e3a8a;
+  --section5-text-p-color: #475569;
+  --section6-text-h2-color: #ffffff;
+  --section6-text-p-color: #e2e8f0;
+}
+
+/* Estilos gerais para todas as seções */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  scroll-snap-align: start;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+/* Estilos específicos para cada seção */
+.section1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/PNG/Metropole.png') no-repeat center center/cover;
+  position: relative;
+}
+
+.section2 {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ff5100, #ff8000, #ffaf1b);
+  padding-bottom: 150px;
+  padding: 0; /* Removido padding da seção */
+}
+
+/* Imagem como fundo à direita */
+.section2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; /* Imagem ocupa a metade direita */
+  height: 100%;
+  background: url('../../assets/PNG/Executivo.png') no-repeat right center/contain;
+  z-index: 1;
+}
+
+/* Curvatura decorativa inferior */
+.section2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 150' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C300,140 900,0 1200,100 L1200,150 L0,150 Z' fill='%23f8f8f8'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.section3 {
+  background-color: #f8f8f8;
+}
+
+.section4 {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #003fa3, #0262fd, #6fadff);
+  padding-bottom: 150px;
+  padding: 0; /* Removido padding da seção */
+}
+
+/* Imagem como fundo à esquerda */
+.section4::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Imagem ocupa a metade esquerda */
+  height: 100%;
+  background: url('../../assets/PNG/Executiva.png') no-repeat left center/contain;
+  z-index: 1;
+}
+
+/* Curvatura decorativa inferior */
+.section4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 150' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C300,140 900,0 1200,100 L1200,150 L0,150 Z' fill='%23f8f8f8'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.section5 {
+  background-color: #f8f8f8;
+}
+
+.section6 {
+  background: url('../../assets/PNG/Mapa.png') no-repeat center center/cover;
+  position: relative;
+}
+
+/* Curvatura para seção 6 (superior) */
+.section6::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 150' preserveAspectRatio='none'%3E%3Cpath d='M0,40 C300,140 900,0 1200,100 L1200,0 L0,0 Z' fill='%23f8f8f8'/%3E%3C/svg%3E") no-repeat top center;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* Garante que o conteúdo das seções 2, 4 e 6 fique acima da curvatura ou fundo */
+.section2 > *,
+.section4 > *,
+.section6 > * {
+  position: relative;
+  z-index: 3;
+}
+
+/* Estilização do banner na seção 1 */
+.banner-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.banner-text {
+  width: 50%;
+  text-align: left;
+}
+
+.banner-text h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: var(--section1-text-h2-color);
+}
+
+.banner-text p {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  color: var(--section1-text-p-color);
+  line-height: 1.7;
+}
+
+.button-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Conteúdo da seção 2 */
+.section2-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start; /* Texto à esquerda */
+  gap: 2rem;
+}
+
+.section2 .text-content {
+  flex: 1;
+  padding: 2rem; /* Padding para o texto */
+  max-width: 50%; /* Limita a largura do texto para a metade esquerda */
+}
+
+.section2 .text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--section2-text-h2-color);
+}
+
+.section2 .text-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--section2-text-p-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+}
+
+/* Remove estilos desnecessários da imagem */
+.section2-image {
+  display: none; /* Remove qualquer referência à imagem antiga */
+}
+
+/* Conteúdo da seção 4 */
+.section4-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end; /* Texto à direita */
+  gap: 2rem;
+}
+
+.section4 .text-content {
+  flex: 1;
+  padding: 2rem; /* Padding para o texto */
+  max-width: 50%; /* Limita a largura do texto para a metade direita */
+}
+
+.section4 .text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--section4-text-h2-color);
+}
+
+.section4 .text-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--section4-text-p-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+}
+
+/* Remove estilos desnecessários da imagem */
+.section4-image {
+  display: none; /* Remove qualquer referência à imagem antiga */
+}
+
+/* Estilização dos cartões na seção 3 */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Estilização individual dos cartões */
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.box-card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 0.8rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Estilização dos cartões de parceiros na seção 5 */
+.partner-cards-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  background: transparent;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.partner-cards-container:hover .partner-card {
+  animation-play-state: paused;
+}
+
+.partner-cards-inner {
+  display: flex;
+  gap: 1.5rem;
+  animation: scroll 20s linear infinite;
+}
+
+/* Estilização individual dos cartões de parceiros */
+.partner-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 150px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: scale(1.05);
+}
+
+.partner-card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Animação de rolagem horizontal */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Estilização do conteúdo das seções 3, 5 e 6 */
+.content {
+  text-align: center;
+  max-width: 1200px;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.section3 .content h2,
+.section5 .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--section3-text-h2-color);
+  word-break: break-word;
+}
+
+.section3 .content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--section3-text-p-color);
+}
+
+.section5 .content h2 {
+  color: var(--section5-text-h2-color);
+}
+
+.section5 .content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--section5-text-p-color);
+}
+
+.section6 .content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--section6-text-h2-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  animation: popIn 0.5s ease-out forwards;
+}
+
+.section6 .content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: var(--section6-text-p-color);
+}
+
+/* Estilização do botão em seção 6 */
+.section6 .content .ripple-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #2563eb;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação para o h2 em seção 6 */
+@keyframes popIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estilização dos botões com efeito ripple */
+.ripple-btn {
+  position: relative;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn {
+  background-color: #2563eb;
+}
+
+.secondary-btn {
+  background-color: #4b5563;
+}
+
+.ripple-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.ripple-btn:active {
+  transform: translateY(0);
+}
+
+.ripple-btn::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 1;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.ripple-btn:active::after {
+  transform: scale(2);
+  opacity: 0;
+}
+
+/* Estilização do botão "Voltar ao Topo" */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: #1e40af;
+  transform: scale(1.1);
+}
+
+.back-to-top svg {
+  font-size: 1.5rem;
+}
+
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+  .banner-text {
+    width: 100%;
+  }
+
+  .banner-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .banner-text p {
+    font-size: 1.2rem;
+  }
+
+  .section2-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .section2 .text-content {
+    max-width: 100%; /* Texto ocupa toda a largura em telas menores */
+    text-align: center; /* Centraliza o texto */
+    padding: 1.5rem;
+  }
+
+  .section2::before {
+    width: 100%; /* Imagem cobre toda a largura */
+    background-position: center center;
+    background-size: cover; /* Ajusta a imagem para cobrir */
+    opacity: 0.3; /* Reduz opacidade para legibilidade */
+  }
+
+  .section2 .text-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .section2 .text-content p {
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Mantém a sombra */
+  }
+
+  .section2::after {
+    height: 100px;
+  }
+
+  .section4-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .section4 .text-content {
+    max-width: 100%; /* Texto ocupa toda a largura em telas menores */
+    text-align: center; /* Centraliza o texto */
+    padding: 1.5rem;
+  }
+
+  .section4::before {
+    width: 100%; /* Imagem cobre toda a largura */
+    background-position: center center;
+    background-size: cover; /* Ajusta a imagem para cobrir */
+    opacity: 0.3; /* Reduz opacidade para legibilidade */
+  }
+
+  .section4 .text-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .section4 .text-content p {
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Mantém a sombra */
+  }
+
+  .section4::after {
+    height: 100px;
+  }
+
+  .section3 .content h2,
+  .section5 .content h2,
+  .section6 .content h2 {
+    font-size: 1.8rem;
+  }
+
+  .section3 .content p,
+  .section5 .content p,
+  .section6 .content p {
+    font-size: 1rem;
+  }
+
+  .ripple-btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .partner-card {
+    width: 150px;
+    height: 120px;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .back-to-top svg {
+    font-size: 1.2rem;
+  }
+
+  /* Ajustes específicos para section 5 */
+  .section5 .content {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .section5 .content h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .partner-cards-container {
+    gap: 1rem;
+  }
+
+  .partner-cards-inner {
+    gap: 1rem;
+  }
+}
+
+/* Estilos responsivos para telas muito pequenas */
+@media (max-width: 480px) {
+  .sectionContainer {
+    padding: 1rem;
+  }
+
+  .banner-content {
+    padding: 1.5rem;
+  }
+}

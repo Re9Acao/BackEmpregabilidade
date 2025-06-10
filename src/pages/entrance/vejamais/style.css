@@ -1,0 +1,79 @@
+.Box {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.Box h2 {
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.job-details {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.job-field {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.label {
+    font-weight: bold;
+    color: #222;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.value {
+    color: #555;
+    flex-grow: 1;
+}
+
+.loading {
+    color: #888;
+    font-style: italic;
+}
+
+.error {
+    color: #d32f2f;
+    font-style: italic;
+    text-align: center;
+}
+
+.BoxBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.apply-button {   
+  border: none;
+  border-radius: 30px; 
+  padding: 12px 25px;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #009b00;
+  width: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.apply-button:hover:not(:disabled) {
+    background-color: #00c900;
+}
+
+.apply-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

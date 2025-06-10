@@ -1,0 +1,238 @@
+/* Contêiner principal da seção, centraliza o conteúdo e ocupa toda a largura */
+.sectionContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contêiner interno para organizar elementos, centraliza e adiciona padding */
+.Box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Contêiner do formulário, define largura máxima e margem superior */
+.FormContainer {
+    margin-top: 30px;
+    max-width: 600px;
+    width: 100%;
+    /* Garante que o formulário ocupe toda a largura disponível em telas menores */
+}
+
+/* Contêiner para campos de entrada, adiciona espaçamento vertical */
+.BoxInput {
+    padding: 5px 0;
+}
+
+/* Estiliza o rótulo dos campos de entrada, exibido como bloco para ocupar linha inteira */
+.BoxInput label {
+    margin-right: 5px;
+    display: block;
+}
+
+/* Estiliza os campos de entrada de texto */
+.BoxInput input {
+    border: none;
+    border-bottom: 1px solid #919191;
+    /* Borda inferior cinza */
+    background-color: transparent;
+    color: #ec6c03;
+    /* Cor do texto laranja */
+    font-weight: bold;
+    padding: 5px 0;
+    font-size: 1em;
+    width: 85%;
+    /* Largura ajustada para evitar overflow */
+    transition: border-color 0.3s;
+    /* Suaviza a transição da borda */
+}
+
+/* Efeito de foco nos campos de entrada */
+.BoxInput input:focus {
+    border-bottom: 1px solid #ff7300;
+    /* Borda laranja neon ao focar */
+    outline: none;
+    /* Remove o contorno padrão do navegador */
+}
+
+/* Estiliza ícones */
+.icon {
+    font-size: 1.2em;
+    color: #919191;
+    /* Cor cinza padrão */
+    cursor: pointer;
+    transition: color 0.3s;
+    /* Suaviza a transição de cor */
+}
+
+/* Efeito hover nos ícones */
+.icon:hover {
+    color: #ec6c03;
+    /* Cor laranja ao passar o mouse */
+}
+
+/* Estiliza o botão de ação principal */
+.BoxCriar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.criar {
+    margin: 40px 0;
+    width: 50%;
+    background-color: #009b00;
+    /* Verde escuro */
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1.2em;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Suaviza a transição de cor */
+}
+
+/* Efeito hover no botão principal */
+.criar:hover {
+    background-color: #00c900;
+    /* Verde mais claro ao passar o mouse */
+}
+
+/* Estiliza o ícone de exclusão (lixo) */
+.lixo {
+    color: red;
+    cursor: pointer;
+    transition: color 0.3s;
+    /* Suaviza a transição de cor */
+}
+
+/* Efeito hover no ícone de exclusão */
+.lixo:hover {
+    color: #919191;
+    /* Cor cinza ao passar o mouse */
+}
+
+/* Estiliza o campo de texto multilinha (textarea) */
+textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #7a6c5e;
+    /* Borda cinza */
+    background-color: #f3f3f3;
+    /* Fundo cinza claro */
+    color: #ec6c03;
+    /* Texto laranja */
+    margin: 15px 0;
+    outline: none;
+    /* Remove o contorno padrão do navegador */
+    transition: border 0.3s, box-shadow 0.3s;
+    /* Suaviza efeitos de borda e sombra */
+    width: 85%;
+    /* Garante largura total */
+    box-sizing: border-box;
+    /* Inclui padding e borda na largura total */
+}
+
+/* Efeito de foco no textarea */
+textarea:focus {
+    border: 1px solid #ff7300;
+    /* Borda laranja neon */
+    box-shadow: 0 0 8px #ff7300;
+    /* Sombra neon ao focar */
+}
+
+/* Contêiner para opções de tipo (ex.: radio buttons) */
+.ContainerTipo {
+    display: flex;
+    padding: 10px 0;
+}
+
+/* Estiliza cada opção de tipo */
+.BoxTipo {
+    margin-right: 20px;
+}
+
+/* Ajusta o espaçamento dos inputs dentro de BoxTipo */
+.BoxTipo input {
+    margin-right: 5px;
+}
+
+/* Media query para telas menores (até 768px, como tablets e celulares) */
+@media screen and (max-width: 768px) {
+
+    /* Reduz a largura máxima do formulário para melhor adaptação */
+    .FormContainer {
+        max-width: 90%;
+        /* Usa 90% da largura da tela */
+        margin-top: 20px;
+        /* Reduz a margem superior */
+    }
+
+    /* Ajusta o tamanho da fonte dos inputs para melhor legibilidade */
+    .BoxInput input {
+        font-size: 0.9em;
+        width: 100%;
+        /* Usa toda a largura disponível */
+    }
+
+    /* Ajusta o tamanho da fonte do botão */
+    .criar {
+        font-size: 1em;
+        padding: 8px 16px;
+        /* Reduz o padding */
+    }
+
+    /* Ajusta o tamanho do textarea */
+    textarea {
+        font-size: 0.9em;
+    }
+
+    /* Organiza as opções de tipo em coluna em telas pequenas */
+    .ContainerTipo {
+        flex-direction: column;
+    }
+
+    /* Remove a margem à direita das opções de tipo */
+    .BoxTipo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Adiciona espaçamento vertical */
+    }
+}
+
+/* Media query para telas muito pequenas (até 480px, como celulares menores) */
+@media screen and (max-width: 480px) {
+
+    /* Reduz ainda mais o tamanho da fonte para inputs */
+    .BoxInput input {
+        font-size: 0.85em;
+    }
+
+    /* Reduz o tamanho da fonte do botão */
+    .criar {
+        font-size: 0.9em;
+        padding: 7px 14px;
+    }
+
+    /* Reduz o tamanho do ícone */
+    .icon {
+        font-size: 1em;
+    }
+
+    /* Reduz o tamanho da fonte do textarea */
+    textarea {
+        font-size: 0.85em;
+    }
+
+    /* Estiliza o botão de ação principal */
+
+    .criar {
+        width: 80%;
+    }
+}

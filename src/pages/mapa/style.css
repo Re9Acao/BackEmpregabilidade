@@ -1,0 +1,237 @@
+/* stile.css */
+.container {
+  height: 100vh;
+  position: relative;
+}
+
+.containerNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px; /* Defina a altura fixa do seu Nav */
+  z-index: 1000;
+}
+
+.containerMapa {
+  position: absolute;
+  top: 50px; /* Inicia abaixo do Nav */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden; /* Impede que o conteúdo do mapa vaze para fora */
+}
+
+.BoxMapa {
+  height: 100%; /* Ocupa toda a altura do containerMapa */
+  width: 100%; /* Ocupa toda a largura do containerMapa */
+}
+
+/* Estilos para mensagens de erro e carregamento */
+.error-message {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+p[aria-live] {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+/* Estilo para ícones personalizados */
+.custom-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para clusters do leaflet.markercluster */
+.leaflet-cluster-anim .leaflet-marker-icon,
+.leaflet-cluster-anim .leaflet-marker-shadow {
+  transition: all 0.3s linear;
+}
+
+.marker-cluster-small {
+  background-color: #009b00;
+}
+.marker-cluster-small div {
+  background-color: #00c900;
+  color: white;
+}
+
+.marker-cluster-medium {
+  background-color: rgba(0, 0, 255, 0.6);
+}
+.marker-cluster-medium div {
+  background-color: rgba(0, 0, 255, 0.8);
+  color: white;
+}
+
+.marker-cluster-large {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.marker-cluster-large div {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+/* Estilos para o card de vaga no hover */
+.vaga-card {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ccc;
+  padding: 15px;
+  max-width: 280px;
+  width: calc(100% - 20px); /* Ajusta a largura para caber na tela com margem */
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+/* Botão de fechar */
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: #ff0000;
+}
+
+/* Botão Veja mais */
+.see-more-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background-color: #009b00;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.see-more-button:hover {
+  background-color: #00c900;
+}
+
+/* Ícone no topo do card */
+.vaga-card .card-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.vaga-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #222;
+  font-weight: 600;
+}
+
+.vaga-card p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.3;
+}
+
+.vaga-card p strong {
+  color: #111;
+  font-weight: 500;
+}
+
+/* Animação de zoom para o card */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.vaga-card {
+  animation: zoomIn 0.3s ease-in-out;
+}
+
+/* Remove ajustes fixos de translate, pois o JavaScript agora lida com o posicionamento */
+.vaga-card.adjust-left {
+  transform: none; /* Deixa o posicionamento ser controlado pelo JavaScript */
+}
+
+.vaga-card.adjust-top {
+  transform: none; /* Deixa o posicionamento ser controlado pelo JavaScript */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .vaga-card {
+    max-width: 240px;
+    padding: 12px;
+  }
+
+  .vaga-card h3 {
+    font-size: 1rem;
+  }
+
+  .vaga-card p {
+    font-size: 0.8rem;
+  }
+
+  .see-more-button {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .close-button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vaga-card {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  .vaga-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .vaga-card p {
+    font-size: 0.75rem;
+  }
+
+  .see-more-button {
+    padding: 5px;
+    font-size: 0.75rem;
+  }
+
+  .close-button {
+    font-size: 0.8rem;
+  }
+
+  .vaga-card .card-icon {
+    margin-bottom: 6px;
+  }
+}

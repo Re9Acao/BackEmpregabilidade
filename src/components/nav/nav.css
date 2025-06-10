@@ -1,0 +1,321 @@
+/* Container principal da barra de navegação */
+.BoxNav {
+  display: flex;
+  width: 100%;
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilo do logotipo RE9 */
+.RE9 {
+  width: 40px;
+  margin-left: 5px;
+}
+
+/* Container do logotipo e ícone de menu */
+.BoxLogo {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+/* Container dos ícones de ação (pesquisa, notificações, usuário) */
+.BoxIcon {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+}
+
+/* Estilo dos ícones de abrir menu e ações do usuário */
+.icone-abrir,
+.icone-usuario {
+  font-size: 1.5em;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Efeito hover para ícones */
+.icone-abrir:hover,
+.icone-usuario:hover {
+  color: #ec6c03;
+}
+
+/* Menu lateral deslizante */
+.BoxLister {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #fff;
+  color: black;
+  padding: 30px 20px 80px 50px;
+  height: 100vh;
+  position: absolute;
+  top: 50px;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Espaçamento entre itens do menu lateral */
+.BoxLister li {
+  margin-bottom: 10px;
+}
+
+/* Estilo dos links do menu lateral */
+.BoxLister a {
+  color: black;
+}
+
+/* Efeito hover nos links do menu lateral */
+.BoxLister a:hover {
+  color: #ec6c03;
+}
+
+/* Estilo do ícone de fechar o menu lateral */
+.Fechar {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Efeito hover no ícone de fechar */
+.Fechar:hover {
+  color: #ec6c03;
+}
+
+/* Container dos ícones de contato no menu lateral */
+.BoxContato {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+
+/* Estilo dos ícones de contato */
+.icone-contato {
+  color: black;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Efeito hover nos ícones de contato */
+.icone-contato:hover {
+  color: #ec6c03;
+}
+
+/* Fundo semi-transparente para o campo de pesquisa */
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+  z-index: 999; /* Abaixo do BoxPesquisar, mas acima de outros elementos */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container do campo de pesquisa, centralizado na tela */
+.BoxPesquisar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+ 
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  padding: 50px 30px 30px 30px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  width: min(90%, 400px); /* Adapta-se a telas menores */
+  max-width: 400px; /* Limita a largura máxima */
+  min-height: 300px; /* Garante altura mínima */
+  max-height: 90vh; /* Limita altura máxima ao viewport */
+  box-sizing: border-box;
+  z-index: 1000; /* Acima do Backdrop e outros elementos */
+  overflow-y: auto; /* Permite rolagem se o conteúdo for grande */
+}
+
+/* Efeito hover no campo de pesquisa */
+.BoxPesquisar:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo dos inputs do campo de pesquisa */
+.BoxPesquisar input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-bottom-color 0.3s ease;
+}
+
+/* Efeito focus nos inputs */
+.BoxPesquisar input:focus {
+  border-bottom-color: #009b00;
+  outline: none;
+}
+
+/* Estilo do botão de pesquisa */
+.pesquisar {
+  border: none;
+  border-radius: 30px;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #009b00;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Efeito hover no botão de pesquisa */
+.pesquisar:hover {
+  background-color: #00c900;
+}
+
+/* Efeito active no botão de pesquisa */
+.pesquisar:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do botão de localização atual */
+.localizacao {
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ececec;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+/* Efeito hover no botão de localização */
+.localizacao:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilo do ícone de localização */
+.locationIcon {
+  color: #ec6c03;
+  font-size: 1.5em;
+  margin-right: 5px;
+}
+
+/* Container do ícone de fechar o campo de pesquisa */
+.BoxFecharPesquisar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Estilo do ícone de fechar o campo de pesquisa */
+.FecharPesquisar {
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Efeito hover no ícone de fechar */
+.FecharPesquisar:hover {
+  color: #ec6c03;
+}
+
+/* Estilos responsivos para telas menores (até 768px) */
+@media (max-width: 768px) {
+  /* Ajusta o padding do campo de pesquisa */
+  .BoxPesquisar {
+    padding: 20px;
+    width: min(90%, 350px);
+    max-width: 350px;
+    min-height: 250px;
+  }
+
+  /* Ajusta o tamanho da fonte dos inputs e botões */
+  .BoxPesquisar input,
+  .pesquisar,
+  .localizacao {
+    font-size: 0.9em;
+  }
+
+  /* Reduz o padding do botão de pesquisa */
+  .pesquisar {
+    padding: 10px 20px;
+  }
+
+  /* Reduz o tamanho do ícone de localização */
+  .locationIcon {
+    font-size: 1.3em;
+  }
+
+  /* Ajusta o tamanho do ícone de fechar */
+  .FecharPesquisar {
+    font-size: 1.3em;
+  }
+}
+
+/* Estilos responsivos para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+  /* Ajusta o padding do campo de pesquisa */
+  .BoxPesquisar {
+    padding: 30px 15px 15px 15px;
+    width: min(90%, 300px);
+    max-width: 300px;
+    min-height: 200px;
+  }
+
+  /* Ajusta o tamanho da fonte dos inputs e botões */
+  .BoxPesquisar input,
+  .pesquisar,
+  .localizacao {
+    font-size: 0.85em;
+  }
+
+  /* Reduz ainda mais o padding do botão de pesquisa */
+  .pesquisar {
+    padding: 8px 15px;
+    margin-top: 15px;
+  }
+
+  /* Reduz o padding do botão de localização */
+  .localizacao {
+    padding: 8px 10px;
+  }
+
+  /* Reduz o tamanho do ícone de localização */
+  .locationIcon {
+    font-size: 1.2em;
+  }
+
+  /* Ajusta o tamanho do ícone de fechar */
+  .FecharPesquisar {
+    font-size: 1.2em;
+  }
+
+  /* Reduz a margem inferior dos inputs */
+  .BoxPesquisar input,
+  .localizacao {
+    margin-bottom: 10px;
+  }
+}

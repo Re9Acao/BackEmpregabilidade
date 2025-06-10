@@ -1,0 +1,73 @@
+.sectionContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.Box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;  
+
+}
+.FormContainer {
+    margin-top: 30px;  
+    max-width: 600px;  
+}
+
+.BoxInput {
+    padding: 5px 0;  
+}
+
+.BoxInput label {
+    margin-right: 5px;
+    display: block;
+}
+
+.BoxInput input {
+    border: none;
+    border-bottom: 1px solid #919191;
+    background-color: transparent;
+    color: #ec6c03;
+    font-weight: bold;
+    padding: 5px 0;
+    font-size: 1em;
+    width: 85%;
+}
+
+.icon {
+    font-size: 1.2em;
+    color: #919191;
+}
+
+.icon:hover {
+    color: #ec6c03;
+}
+
+.atualizar {
+    margin: 40px 0;
+    width: 100%;
+    background-color: #009b00;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1.2em;
+    border: none;
+    padding: 10px 20px;
+}
+
+.atualizar:hover {
+    background-color: #00c900;
+}
+
+.lixo {
+    color: red;
+    cursor: pointer;
+}
+
+.lixo:hover {
+    color: #919191;
+}

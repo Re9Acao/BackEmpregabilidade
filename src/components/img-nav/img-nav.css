@@ -1,0 +1,159 @@
+/* Contêiner principal para a imagem, ocupa toda a largura */
+.containerImg {
+    width: 100%;
+}
+
+/* Contêiner interno para centralizar a imagem */
+.boxImg {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estiliza a imagem dentro do contêiner */
+.boxImg img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Contêiner para os botões, centraliza e adiciona margem superior */
+.BoxButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Estiliza os botões de usuário e empresa */
+.userButton,
+.empresaButton {
+    color: #fff; /* Texto branco */
+    background-color: #9b9b9b; /* Cinza padrão */
+    padding: 12px 30px;
+    border-radius: 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center; /* Alinha ícone e texto verticalmente */
+    justify-content: center; /* Centraliza ícone e texto */
+    text-decoration: none; /* Remove sublinhado padrão de links */
+    transition: background-color 0.3s; /* Suaviza a transição de cor */
+}
+
+/* Mantém o estilo branco no estado ativo (após clique) */
+.userButton:active,
+.empresaButton:active,
+.userButton.active,
+.empresaButton.active {
+    color: #fff; /* Garante que o texto permaneça branco */
+    background-color: #afafaf; /* Cor ligeiramente mais clara para feedback */
+}
+
+/* Efeito hover nos botões */
+.userButton:hover,
+.empresaButton:hover {
+    background-color: #afafaf; /* Cinza mais claro */
+    color: #fff; /* Mantém texto branco */
+}
+
+/* Estiliza os ícones de usuário e empresa */
+.user-icon,
+.briefcase-icon {
+    font-size: 1.5em;
+    color: #fff; /* Ícones brancos */
+    margin-right: 8px; /* Espaço entre ícone e texto */
+    transition: color 0.3s; /* Suaviza a transição de cor */
+}
+
+/* Garante que os ícones permaneçam brancos no estado ativo ou hover */
+.userButton:hover .user-icon,
+.empresaButton:hover .briefcase-icon,
+.userButton:active .user-icon,
+.empresaButton:active .briefcase-icon,
+.userButton.active .user-icon,
+.empresaButton.active .briefcase-icon {
+    color: #fff; /* Ícones permanecem brancos */
+}
+
+/* Media Queries para responsividade */
+
+/* Telas menores que 500px (mobile pequeno) */
+@media (max-width: 500px) {
+    /* Ajusta o tamanho e espaçamento dos botões */
+    .userButton,
+    .empresaButton {
+        width: 90%; /* Botões ocupam quase toda a largura */
+        padding: 10px 15px; /* Reduz o padding */
+        margin: 5px; /* Reduz a margem */
+        font-size: 0.9em; /* Reduz o tamanho da fonte */
+    }
+
+    /* Ajusta o tamanho dos ícones */
+    .user-icon,
+    .briefcase-icon {
+        font-size: 1.2em; /* Reduz o tamanho do ícone */
+        margin-right: 6px; /* Reduz o espaço entre ícone e texto */
+    }
+
+    /* Empilha os botões verticalmente */
+    .BoxButton {
+        flex-direction: column;
+        gap: 0.5rem; /* Espaço entre os botões */
+    }
+}
+
+/* Telas menores que 768px (mobile) */
+@media (max-width: 768px) {
+    /* Ajusta o tamanho da imagem */
+    .boxImg img {
+        max-width: 100%; /* Limita a largura da imagem */
+        height: auto; /* Mantém a proporção */
+    }
+
+    /* Ajusta o tamanho e espaçamento dos botões */
+    .userButton,
+    .empresaButton {
+        width: 80%; /* Botões ocupam mais largura */
+        padding: 10px 15px; /* Reduz o padding */
+        margin: 5px; /* Reduz a margem */
+        font-size: 0.9em; /* Reduz o tamanho da fonte */
+    }
+
+    /* Ajusta o tamanho dos ícones */
+    .user-icon,
+    .briefcase-icon {
+        font-size: 1.2em; /* Reduz o tamanho do ícone */
+        margin-right: 6px; /* Reduz o espaço entre ícone e texto */
+    }
+
+    /* Empilha os botões verticalmente */
+    .BoxButton {
+        flex-direction: column;
+        gap: 0.5rem; /* Espaço entre os botões */
+    }
+}
+
+/* Telas entre 769px e 1024px (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Ajusta o tamanho da imagem para tablets */
+    .boxImg img {
+        max-width: 80%; /* Tamanho intermediário */
+        height: auto; /* Mantém a proporção */
+    }
+
+    /* Ajusta o tamanho e espaçamento dos botões */
+    .userButton,
+    .empresaButton {
+        width: auto; /* Botões com largura automática */
+        padding: 10px 25px; /* Padding ajustado */
+        margin: 8px; /* Margem ajustada */
+        font-size: 0.95em; /* Tamanho de fonte intermediário */
+    }
+
+    /* Ajusta o tamanho dos ícones */
+    .user-icon,
+    .briefcase-icon {
+        font-size: 1.3em; /* Tamanho intermediário */
+        margin-right: 7px; /* Espaço ajustado */
+    }
+}

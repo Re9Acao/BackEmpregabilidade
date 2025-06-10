@@ -1,0 +1,341 @@
+/* Contêiner para todo o conteúdo principal, garantindo largura total e centralização dos filhos */
+.sectionContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Garante que a seção ocupe pelo menos a altura total da viewport */
+}
+
+/* Envoltório para o formulário e conteúdo relacionado, centralizando com padding */
+.Box {
+    width: 100%;
+    max-width: 800px;
+    /* Limita a largura para melhor legibilidade em telas maiores */
+    display: flex;
+    flex-direction: column;
+    /* Empilha os filhos verticalmente */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: #fff;
+    /* Fundo branco para a área do formulário */
+    border-radius: 10px;
+    /* Cantos arredondados sutis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para profundidade */
+}
+
+/* Estilização do contêiner do título, garantindo que o cabeçalho seja destacado */
+.titleContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titleContainer h1 {
+    font-size: 2em;
+    color: #333;
+    /* Cor escura para contraste */
+    font-weight: bold;
+}
+
+/* Contêiner do formulário para os campos de entrada, com largura máxima para responsividade */
+.formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+    max-width: 600px;
+    width: 100%;
+    /* Garante que o formulário ocupe a largura disponível */
+}
+
+/* Contêiner para agrupar campos de entrada, sempre em uma coluna */
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    /* Empilha os campos verticalmente em todas as resoluções */
+    gap: 20px;
+    /* Espaçamento entre os campos de entrada */
+    margin-bottom: 20px;
+}
+
+/* Estilização individual dos formulários de entrada */
+.input-Form {
+    flex: 1;
+    min-width: 250px;
+    /* Garante que os campos não fiquem muito estreitos */
+    padding: 5px 0;
+}
+
+/* Estilização dos rótulos dos campos de entrada */
+.input-Form label {
+    margin-bottom: 5px;
+    display: block;
+    font-size: 1em;
+    color: #333;
+    /* Cor escura para legibilidade */
+    font-weight: 500;
+}
+
+/* Estilização dos campos de entrada */
+.input-Form input {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #919191;
+    /* Estilo de sublinhado para os campos */
+    background-color: transparent;
+    color: #ec6c03;
+    /* Cor laranja para o texto, combinando com a marca */
+    font-weight: bold;
+    padding: 8px 0;
+    font-size: 1em;
+    width: 100%;
+    /* Largura total do contêiner */
+    outline: none;
+    /* Remove o contorno padrão */
+    transition: border-color 0.3s ease;
+    /* Transição suave para o estado de foco */
+}
+
+/* Estado de foco dos campos de entrada */
+.input-Form input:focus {
+    border-bottom: 2px solid #ec6c03;
+    /* Sublinhado laranja mais espesso no foco */
+}
+
+/* Estilização das mensagens de erro */
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Contêiner do campo de senha com ícone de alternância */
+.BoxSenha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícone de alternância de visibilidade da senha */
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #919191;
+    /* Cor cinza para o ícone */
+    transition: color 0.3s ease;
+    /* Transição suave de cor */
+}
+
+/* Estado de hover do ícone de alternância */
+.password-toggle:hover {
+    color: #ec6c03;
+    /* Cor laranja no hover */
+}
+
+/* Contêiner do botão de envio */
+.buttonContainer {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilização do botão de envio */
+.buttonContainer .submit {
+    width: 100%;
+    max-width: 300px;
+    /* Limita a largura do botão */
+    background-color: #009b00;
+    /* Fundo verde */
+    color: #fff;
+    /* Texto branco */
+    border-radius: 30px;
+    /* Cantos arredondados */
+    font-size: 1.2em;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Transição suave para o hover */
+}
+
+/* Estado de hover do botão de envio */
+.buttonContainer .submit:hover {
+    background-color: #00c900;
+    /* Verde mais claro no hover */
+}
+
+/* Contêiner para o link "Já tem uma conta?" */
+.loginContainer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+/* Estilização global para todos os links */
+a {
+    text-decoration: none;
+}
+
+/* Estado visitado para todos os links, mantendo a mesma cor do estado padrão */
+a:visited {
+    color: inherit;
+    /* Mantém a cor definida no estado padrão do link */
+}
+
+/* Estilização do link no contêiner de login */
+.loginContainer a {
+    color: #0042c5;
+    /* Cor azul para links */
+    font-weight: bold;
+}
+
+/* Estado de hover do link de login */
+.loginContainer a:hover {
+    text-decoration: underline;
+    /* Sublinhado no hover */
+    color: #001f5c;
+    /* Azul mais escuro no hover */
+}
+
+/* Contêiner de informações para termos e políticas */
+.infoContainer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+    /* Cinza claro para menos destaque */
+}
+
+/* Estilização dos links no contêiner de informações */
+.infoContainer a {
+    color: #ec6c03;
+    /* Cor laranja para links */
+}
+
+/* Estado de unprotected hover dos links de informações */
+.infoContainer a:hover {
+    text-decoration: underline;
+    /* Sublinhado no hover */
+    color: #d55a02;
+    /* Laranja mais escuro no hover */
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 768px) {
+    .Box {
+        padding: 15px;
+    }
+
+    .input-Form {
+        min-width: 100%;
+        /* Largura total para os campos em telas pequenas */
+    }
+}
+
+/* Ajustes responsivos para telas muito pequenas (max-width: 500px) */
+@media (max-width: 500px) {
+
+    /* Reduzindo o padding e ajustando a largura máxima do contêiner do formulário */
+    .Box {
+        padding: 8px;
+        /* Padding ainda menor para maximizar o espaço */
+        max-width: 100%;
+        /* Usa toda a largura disponível */
+        border-radius: 8px;
+        /* Cantos ligeiramente menos arredondados */
+    }
+
+    /* Reduzindo o tamanho da fonte do título para melhor proporção */
+    .titleContainer h1 {
+        font-size: 1.2em;
+        /* Tamanho de fonte ainda menor */
+    }
+
+    /* Ajustando o contêiner do formulário para margens menores */
+    .formContainer {
+        margin-top: 15px;
+        max-width: 100%;
+        /* Ocupa toda a largura disponível */
+    }
+
+    /* Reduzindo o espaçamento entre os campos de entrada */
+    .inputContainer {
+        gap: 8px;
+        /* Menor espaçamento entre os campos */
+        margin-bottom: 12px;
+    }
+
+    /* Ajustando os campos de entrada para telas pequenas */
+    .input-Form {
+        min-width: 100%;
+        /* Ocupa toda a largura disponível */
+        padding: 2px 0;
+    }
+
+    /* Ajustando os rótulos para evitar quebras de linha */
+    .input-Form label {
+        font-size: 0.85em;
+        /* Tamanho de fonte menor */
+        white-space: nowrap;
+        /* Evita quebra de linha nos rótulos */
+        overflow: hidden;
+        /* Esconde qualquer texto que exceda */
+        text-overflow: ellipsis;
+        /* Adiciona reticências se o texto for longo */
+    }
+
+    /* Ajustando a largura e o padding dos campos de entrada */
+    .input-Form input {
+        width: 100%;
+        /* Garante largura total */
+        padding: 5px 0;
+        font-size: 0.85em;
+        /* Tamanho de fonte menor */
+    }
+
+    /* Ajustando o ícone de alternância da senha para telas pequenas */
+    .password-toggle {
+        right: 6px;
+        top: 3px;
+        font-size: 0.9em;
+        /* Tamanho do ícone menor */
+    }
+
+    /* Ajustando o contêiner do botão para telas pequenas */
+    .buttonContainer {
+        width: 80%;
+        margin-top: 12px;
+    }
+
+    /* Ajustando o botão de envio */
+    .buttonContainer .submit {
+        max-width: 100%;
+        /* Ocupa toda a largura disponível */
+        font-size: 0.9em;
+        /* Tamanho de fonte menor */
+    }
+
+    /* Ajustando o contêiner de login para telas pequenas */
+    .loginContainer {
+        font-size: 0.8em;
+        /* Tamanho de fonte menor */
+        margin-top: 12px;
+    }
+
+    /* Ajustando o contêiner de informações para telas pequenas */
+    .infoContainer {
+        font-size: 0.75em;
+        /* Tamanho de fonte menor */
+        margin-top: 12px;
+    }
+}

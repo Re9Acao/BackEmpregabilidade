@@ -1,0 +1,333 @@
+/* Contêiner para todo o conteúdo principal, garantindo largura total e centralização dos filhos */
+.sectionContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Garante que a seção ocupe pelo menos a altura total da viewport */
+}
+
+/* Envoltório para o formulário e conteúdo relacionado, centralizando com padding */
+.Box {
+    width: 100%;
+    max-width: min(800px, 90vw); /* Limita a largura para 800px ou 90% da viewport */
+    display: flex;
+    flex-direction: column;
+    /* Empilha os filhos verticalmente */
+    align-items: center;
+    justify-content: center;
+    padding: clamp(10px, 3vw, 20px); /* Padding dinâmico para telas menores */
+    margin-top: 20px;
+    background-color: #fff;
+    /* Fundo branco para a área do formulário */
+    border-radius: 10px;
+    /* Cantos arredondados sutis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para profundidade */
+    box-sizing: border-box; /* Garante que padding não cause overflow */
+}
+
+/* Contêiner do formulário, define largura máxima e margem */
+.FormContainer {
+    margin-top: 30px;
+    max-width: min(600px, 90vw); /* Limita a largura do formulário */
+    width: 100%;
+}
+
+/* Contêiner para centralizar conteúdo */
+.BoxContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Contêiner de cada campo de input, usa flex para alinhar elementos */
+.BoxInput {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    width: 100%;
+    flex-wrap: wrap; /* Permite que o rótulo quebre a linha em telas menores */
+}
+
+/* Contêiner interno para agrupar input e ícone, mantendo-os na mesma linha */
+.input-icon-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Impede quebra de linha entre input e ícone */
+    flex: 1; /* Ocupa o espaço disponível */
+    width: 100%; /* Garante que o contêiner se ajuste à largura disponível */
+}
+
+/* Estiliza os rótulos dos campos */
+.BoxInput label {
+    margin-right: 10px;
+    width: clamp(80px, 25vw, 100px); /* Largura ajustável para rótulos */
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Tamanho de fonte responsivo */
+    flex-shrink: 0; /* Impede que o rótulo encolha */
+}
+
+/* Contêiner para o campo de upload de arquivo */
+.BoxInputFile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 5px 0;
+}
+
+/* Estilização dos campos de entrada (exceto file) */
+.input-Form input:not([type="file"]) {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #919191;
+    /* Estilo de sublinhado para os campos */
+    background-color: transparent;
+    color: #ec6c03;
+    /* Cor laranja para o texto, combinando com a marca */
+    font-weight: bold;
+    padding: 8px 0;
+    font-size: clamp(0.9rem, 2.5vw, 1em); /* Tamanho de fonte responsivo */
+    width: 100%;
+    flex: 1; /* Permite que o input ocupe o espaço disponível */
+    outline: none;
+    /* Remove o contorno padrão */
+    transition: border-color 0.3s ease;
+    /* Transição suave para o estado de foco */
+}
+
+/* Estilização específica para o campo de upload de arquivo */
+.input-Form.file-upload {
+    width: clamp(200px, 60vw, 250px); /* Largura ajustável para upload */
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    /* Borda leve ao redor da caixa */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    background-color: #f9f9f9;
+    /* Fundo leve */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    /* Sombra interna sutil */
+    text-align: center;
+    /* Centraliza o conteúdo */
+}
+
+/* Estilização do input de arquivo */
+.input-Form.file-upload input[type="file"] {
+    border: none;
+    padding: 10px 0;
+    color: transparent;
+    /* Oculta o texto padrão do navegador */
+    font-weight: normal;
+    cursor: pointer;
+    display: block;
+    /* Garante que o input seja tratado como bloco */
+    width: 100%;
+}
+
+/* Personalização do botão de upload de arquivo */
+.input-Form.file-upload input[type="file"]::-webkit-file-upload-button {
+    background-color: #ec6c03;
+    /* Cor laranja para o botão */
+    color: #fff;
+    /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 2.5vw, 1em); /* Tamanho de fonte responsivo */
+    display: block;
+    margin: 0 auto;
+    /* Centraliza o botão horizontalmente */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito hover para o botão de upload */
+.input-Form.file-upload input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #d55a02;
+    /* Laranja mais escuro no hover */
+}
+
+/* Estilização da mensagem de status do arquivo */
+.input-Form.file-upload .file-status {
+    display: block;
+    margin-top: 8px;
+    font-size: clamp(0.8rem, 2.2vw, 0.9em); /* Tamanho de fonte responsivo */
+    color: #666;
+    /* Cor cinza para a mensagem */
+    text-align: center;
+}
+
+/* Estado de foco dos campos de entrada (exceto file) */
+.input-Form input:not([type="file"]):focus {
+    border-bottom: 2px solid #ec6c03;
+    /* Sublinhado laranja mais espesso no foco */
+}
+
+/* Estiliza a saudação (ex.: Bom dia) */
+.tempo {
+    color: #000;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Tamanho de fonte responsivo */
+}
+
+/* Estiliza o nome do usuário */
+.nome {
+    color: #ec6c03;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Tamanho de fonte responsivo */
+}
+
+/* Estiliza os ícones de edição */
+.icon {
+    font-size: clamp(0.9rem, 2.5vw, 1.1em); /* Tamanho de ícone responsivo */
+    color: #919191;
+    margin-left: clamp(4px, 1vw, 6px); /* Margem ajustável */
+    cursor: pointer;
+    flex-shrink: 0; /* Impede que o ícone encolha */
+}
+
+/* Efeito hover para os ícones de edição */
+.icon:hover {
+    color: #ec6c03;
+}
+
+/* Estiliza o botão de atualizar */
+.atualizar {
+    margin: clamp(20px, 5vw, 40px) 0; /* Margem ajustável */
+    width: 100%;
+    background-color: #009b00;
+    color: #fff;
+    border-radius: 30px;
+    font-size: clamp(1rem, 3vw, 1.2em); /* Tamanho de fonte responsivo */
+    border: none;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 4vw, 20px); /* Padding responsivo */
+}
+
+/* Efeito hover para o botão de atualizar */
+.atualizar:hover {
+    background-color: #00c900;
+}
+
+/* Estiliza o ícone de exclusão (lixeira) */
+.lixo {
+    color: red;
+    cursor: pointer;
+    font-size: clamp(1rem, 3vw, 1.2em); /* Tamanho de ícone responsivo */
+}
+
+/* Efeito hover para o ícone de exclusão */
+.lixo:hover {
+    color: #919191;
+}
+
+/* Media Queries para dispositivos menores */
+
+/* Telas menores que 768px (tablets e mobiles) */
+@media (max-width: 768px) {
+    .Box {
+        margin-top: 20px; /* Reduz margem superior em telas menores */
+        padding: 15px;
+    }
+
+    .BoxInput {
+        flex-wrap: wrap; /* Permite que o rótulo quebre para a linha superior */
+        align-items: flex-start; /* Alinha ao topo para melhor organização */
+        gap: 5px; /* Espaço entre rótulo e input-icon-wrapper */
+        width: 80%;
+    }
+
+    .input-icon-wrapper {
+        flex-wrap: nowrap; /* Garante que input e ícone fiquem na mesma linha */
+        width: 100%; /* Ocupa a largura disponível */
+    }
+
+    .tempo,
+    .nome {
+        font-size: 1.2rem; /* Reduz tamanho da fonte para saudação e nome */
+    }
+
+    .BoxInput label {
+        width: 100%; /* Rótulo ocupa a linha inteira */
+        margin-bottom: 5px; /* Espaço entre rótulo e input */
+        margin-right: 0;
+    }
+
+    .input-Form input:not([type="file"]) {
+        width: 100%; /* Input ocupa o espaço disponível */
+        flex: 1;
+    }
+
+    .input-Form.file-upload {
+        width: 100%; /* Campo de upload ocupa largura total */
+    }
+
+    .atualizar {
+        font-size: 1rem; /* Tamanho de fonte menor */
+        padding: 8px 15px;
+    }
+
+    .BoxInputFile {
+        margin-top: 30px; /* Reduz margem superior */
+    }
+
+    .icon {
+        margin-left: 4px; /* Reduz margem para economizar espaço */
+    }
+}
+
+/* Telas menores que 480px (móveis pequenos) */
+@media (max-width: 480px) {
+    .Box {
+        width: 100%;
+        max-width: min(800px, 90vw); /* Limita a largura para 800px ou 90% da viewport */
+        display: flex;
+        flex-direction: column;
+        /* Empilha os filhos verticalmente */
+        align-items: start;
+        justify-content: start;
+        padding: clamp(10px, 3vw, 20px); /* Padding dinâmico para telas menores */
+        margin-top: 60px;       
+    }
+
+    .FormContainer {
+        margin-top: 20px;      
+    }
+
+    .BoxInput label {
+        font-size: 0.85rem; /* Tamanho de fonte menor para rótulos */
+    }
+
+    .input-icon-wrapper {
+        width: 100%; /* Garante que o contêiner se ajuste à largura disponível */
+        min-width: 0; /* Remove restrição de largura mínima para evitar overflow */
+    }
+
+    .tempo,
+    .nome {
+        font-size: 1.2rem; /* Reduz tamanho da fonte para saudação e nome */
+    }
+
+    .input-Form input:not([type="file"]) {
+        font-size: 0.85rem; /* Tamanho de fonte menor */
+    }
+
+    .input-Form.file-upload .file-status {
+        font-size: 0.8rem;
+    }
+
+    .icon,
+    .lixo {
+        font-size: 1rem; /* Tamanho de ícone ainda menor para evitar overflow */
+        margin-left: 3px; /* Reduz margem ao mínimo */
+    }
+
+    .atualizar {
+        font-size: 0.9rem;
+        padding: 7px 12px;
+    }
+}
